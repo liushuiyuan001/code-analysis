@@ -1,4 +1,4 @@
-exports.defaultPlugin = function (analysisContext) {
+exports.methodPlugin = function (analysisContext) {
   const mapName = 'methodMap'
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
