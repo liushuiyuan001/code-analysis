@@ -3,7 +3,7 @@ exports.browserPlugin = function (analysisContext) {
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
 
-  function isApiCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, lineNumber) {
+  function isApiCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, line) {
     try {
       if(!context[mapName][apiName]) {
         context[mapName][apiName] = {}
@@ -27,6 +27,7 @@ exports.browserPlugin = function (analysisContext) {
           context[mapName][apiName].callFiles[filePath].lines.push(line);
         }
       }
+      console.log(analysisContext[mapName])
       return true; // 命中规则，终止执行后续插件
     } catch (error) {
       const info = {

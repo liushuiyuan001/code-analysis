@@ -7,6 +7,7 @@ import { data, XAXIS_ARR } from './data'
 function App() {
 
   const [count, setCount] = useState(1)
+  document.getElementById('app').innerHTML = count
   return (
     <div className="app">
       {/* <Gantt data={data}/> */}
