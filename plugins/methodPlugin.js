@@ -33,7 +33,6 @@ exports.methodPlugin = function (analysisContext) {
           context[mapName][apiName].callFiles[filePath].lines.push(line);
         }
       }
-      console.log(analysisContext[mapName])
       return true; // 命中规则，终止执行后续插件
     } catch (error) {
       console.log('error', error);
@@ -54,7 +53,7 @@ exports.methodPlugin = function (analysisContext) {
 
   // 返回分析Node节点的函数
   return {
-    mapNmae: mapName,
+    mapName: mapName,
     checkFun: isMethodCheck,
     afterHook: null,
   }

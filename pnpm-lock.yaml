@@ -10,6 +10,9 @@ dependencies:
   commander:
     specifier: ^6.2.0
     version: 6.2.0
+  dayjs:
+    specifier: ^1.11.7
+    version: 1.11.7
   glob:
     specifier: ^7.1.6
     version: 7.1.6
@@ -155,6 +158,10 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    dev: false
+
+  /dayjs@1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /defaults@1.0.4:

@@ -46,7 +46,7 @@ exports.defaultPlugin = function (analysisContext) {
 
   // 返回分析Node节点的函数
   return {
-    mapNmae: mapName,
+    mapName: mapName,
     checkFun: isApiCheck,
     afterHook: null,
   }
