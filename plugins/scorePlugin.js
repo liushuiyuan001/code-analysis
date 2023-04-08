@@ -21,7 +21,6 @@ exports.defaultScorePlugin = function (analysisContext) {
       message.push('import * as ' + item + ' 属于非建议导入方式，建议修改')
     }
   })
-  console.log('analysisContext', analysisContext)
   // BrowerAPI扣分处理
   Object.keys(analysisContext['browserMap']).forEach(item => {
     let keyName = ''
