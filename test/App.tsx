@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import './App.css';
+import { cloneDeep as clone } from 'lodash-es';
+import { data, XAXIS_ARR } from './data'
+import * as parse from '@babel/parse';
 import Gantt from 'time-gantt';
 import Index from './index'
-import { data, XAXIS_ARR } from './data'
+import './App.css';
 
 function App() {
 

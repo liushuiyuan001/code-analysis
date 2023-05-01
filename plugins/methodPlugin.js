@@ -1,15 +1,14 @@
+const t = require("@babel/types");
+
 exports.methodPlugin = function (analysisContext) {
   const mapName = 'methodMap'
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
 
-  function isMethodCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, line) {
+  function isMethodCheck (context, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, line) {
     try {
-      if(!(node.parent && tsCompiler.isCallExpression(node.parent))) {
-        return false;
-      }
-      if(!(node.parent.expression.pos === node.pos && node.parent.expression.end === node.end)) {
-        return false;
+      if(!t.isCallExpression(node) || node.callee.type !== 'Identifier') {
+        return false
       }
       if(!context[mapName][apiName]) {
         context[mapName][apiName] = {}

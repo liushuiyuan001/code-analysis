@@ -3,11 +3,11 @@ exports.typePlugin = function (analysisContext) {
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
 
-  function isTypeCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, lineNumber) {
+  function isTypeCheck (context, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, lineNumber) {
     try {
-      if(!(node.parent && tsCompiler.isTypeReferenceNode(node.parent))) {
+      // if(!(node.parent && tsCompiler.isTypeReferenceNode(node.parent))) {
         return false;
-      }
+      // }
       if(!context[mapName][apiName]) {
         context[mapName][apiName] = {}
         context[mapName][apiName].callNum = 1;

@@ -3,12 +3,12 @@ exports.browserPlugin = function (analysisContext) {
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
 
-  function isApiCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, line) {
+  function isApiCheck (context, baseNode, depth, apiName, filePath, projectName, httpRepo, line) {
     try {
       if(!context[mapName][apiName]) {
         context[mapName][apiName] = {}
         context[mapName][apiName].callNum = 1;
-        context[mapName][apiName].callOrigin = matchImportItem.origin;
+        // context[mapName][apiName].callOrigin = matchImportItem.origin;
         context[mapName][apiName].callFiles = {}
         context[mapName][apiName].callFiles[filePath] = {}
         context[mapName][apiName].callFiles[filePath].projectName = projectName;
@@ -31,7 +31,7 @@ exports.browserPlugin = function (analysisContext) {
     } catch (error) {
       const info = {
         projectName: projectName,
-        matchImportItem: matchImportItem,
+        // matchImportItem: matchImportItem,
         apiName: apiName,
         httpRepo: httpRepo + filePath.split('&')[1] + '#L' + line,
         file: filePath.split('&')[1],

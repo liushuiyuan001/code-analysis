@@ -3,7 +3,7 @@ exports.defaultPlugin = function (analysisContext) {
   // 在分析实例上下文挂载副作用
   analysisContext[mapName] = {}
 
-  function isApiCheck (context, tsCompiler, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, lineNumber) {
+  function isApiCheck (context, node, depth, apiName, matchImportItem, filePath, projectName, httpRepo, line) {
     try {
       if(!context[mapName][apiName]) {
         context[mapName][apiName] = {}
